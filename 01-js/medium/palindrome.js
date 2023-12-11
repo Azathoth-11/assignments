@@ -4,7 +4,16 @@
 */
 
 function isPalindrome(str) {
+  let res = str.toLowerCase().replace(/[\s\W]/g, '');
+  let middleValue = Math.floor(res.length / 2);
+  for(let i=0; i<=middleValue; i++){
+    if(res[i] != res[res.length - 1 - i]){
+      return false;
+    }
+      // console.log(res.length - 1 - i);
+  }
   return true;
+  // return middleValue;
 }
 
 module.exports = isPalindrome;

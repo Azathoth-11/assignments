@@ -6,6 +6,25 @@
 
 function isAnagram(str1, str2) {
 
+
+    if (str1.length != str2.length){
+      return false;
+    }
+
+    const lowerCaseStr1 = str1.toLowerCase();
+    const lowerCaseStr2 = str2.toLowerCase();
+    const sortStr1 = lowerCaseStr1.split("").sort();
+    const sortStr2 = lowerCaseStr2.split("").sort();
+
+    for (let i=0; i<= str1.length; i++) {
+      if (sortStr1[i] != sortStr2[i]){
+          return false;
+      }
+    }
+
+    return true;
+
+
 }
 
 module.exports = isAnagram;
